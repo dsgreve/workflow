@@ -1,0 +1,25 @@
+@import "./modules/hero.scss";
+
+$colour: #3b4045;
+$textColor: rgba(65, 255, 0, 0.9);
+$xLargeFont: 2.5rem;
+$largeFont: 2.25rem;
+
+body {
+  background-color: $colour;
+  color: $textColor;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+}
+h1,
+h2,
+h3 {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+h1 {
+  font-size: $xLargeFont;
+}
+h2 {
+  font-size: $largeFont;
+}
