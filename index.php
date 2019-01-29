@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|VT323" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/css/bundle.css" />
-    <script src="dist/js/bundle.js"></script>
+    <script src="dist/js/Bundle.js"></script>
 </head>
 
 <body>

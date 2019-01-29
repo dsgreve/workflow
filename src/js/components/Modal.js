@@ -1,5 +1,4 @@
-import $ from 'jquery';
-
-$('.hero').click(function () {
-    alert("Click");
-});
+console.log('Modal');
+$(".hero").click(function(){
+    $("p").hide();
+  });

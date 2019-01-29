@@ -6,14 +6,12 @@ import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
-import webpack from 'webpack-stream';
+import webpack from 'webpack';
+import webpackstream from 'webpack-stream';
 const PRODUCTION = yargs.argv.prod;
 
 export const styles = () => {
     return src('src/scss/bundle.scss')
-        .pipe(sass({
-            includePaths: require('node-normalize-scss').includePaths
-        }))
         .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
@@ -47,35 +45,10 @@ export const watchForChanges = () => {
     watch('src/js/**/*js', series(scripts, reload));
     watch("**/*.php", reload);
 }
-
+const webpackConfig = require('./webpack.config.js');
 export const scripts = () => {
     return src('src/js/bundle.js')
-        .pipe(webpack({
-            module: {
-                plugins: [
-                    new webpack.DefinePlugin({
-                        // Definitions...
-                    })
-                ],
-                rules: [
-                    {
-                        test: /\.js$/,
-                        use: {
-                            loader: 'babel-loader',
-                            options: {
-                                presets: ['env']
-                            }
-                        }
-                    }
-                ]
-            },
-
-            mode: PRODUCTION ? 'production' : 'development',
-            devtool: !PRODUCTION ? 'inline-source-map' : false,
-            output: {
-                filename: 'bundle.js'
-            },
-        }))
+    .pipe(webpackstream(webpackConfig), webpack)
         .pipe(dest('dist/js'));
 }
 

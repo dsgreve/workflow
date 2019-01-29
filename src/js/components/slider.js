@@ -1,2 +1,1 @@
-console.log('slider slide');
-$('.hero').hide();
+console.log('slider slidden');
