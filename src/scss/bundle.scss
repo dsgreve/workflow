@@ -1,3 +1,4 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "./modules/hero.scss";
 
 $colour: #3b4045;
@@ -8,8 +9,8 @@ $largeFont: 2.25rem;
 body {
   background-color: $colour;
   color: $textColor;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
 }
 h1,
 h2,

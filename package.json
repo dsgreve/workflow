@@ -15,21 +15,24 @@
     "@babel/register": "^7.0.0",
     "autoprefixer": "^9.4.6",
     "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
+    "gulp-modernizr": "^3.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
+    "node-normalize-scss": "^8.0.0",
     "webpack-stream": "^5.2.1",
     "yargs": "^12.0.5"
   },
   "dependencies": {
-    "normalize": "^0.3.1",
+    "jquery": "^3.3.1",
     "normalize-scss": "^7.0.1",
-    "normalize.scss": "^0.1.0"
+    "waypoints": "^4.0.1"
   }
 }
